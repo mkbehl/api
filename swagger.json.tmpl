@@ -1,0 +1,4357 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "APIs with Lambda Authorizer for Hansen-Pi (Core-App)",
+    "version": "2021-03-16T06:00:16Z",
+    "title": "Hansen PI core"
+  },
+  "host": "inventorycore-k8s.hansen-pi-dev.aws.dishcloud.io",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/inventory/api/authorization/group": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "${VPCID}",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/group",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/authorization/groups": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/groups",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/authorization/groups/delete": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "DELETE",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/groups/delete",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/authorization/role": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/role",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/authorization/roles": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/roles",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/authorization/roles/delete": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "DELETE",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/authorization/roles/delete",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.customerId": "method.request.querystring.customerId",
+            "integration.request.querystring.id": "method.request.querystring.id",
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/activation": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/activation",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/expiry": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/expiry",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/order": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/order",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/root": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/root",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.customerId": "method.request.querystring.customerId",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}/customerId": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}/customerId",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}/parent": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}/parent",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}/relatedPortfolioItems": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}/relatedPortfolioItems",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}/root": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}/root",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/commercial/portfolioitem/{id}/status": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem/{id}/status",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/state/machine": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "stateMachineName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machine",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.stateMachineName": "method.request.querystring.stateMachineName",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.version": "method.request.querystring.version"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machine",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      },
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "stateMachineName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "DELETE",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machine",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.stateMachineName": "method.request.querystring.stateMachineName",
+            "integration.request.querystring.version": "method.request.querystring.version"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/state/machine/global": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machine/global",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.version": "method.request.querystring.version"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/state/machine/names": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "stateMachineName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machine/names",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.stateMachineName": "method.request.querystring.stateMachineName",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.version": "method.request.querystring.version"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/state/machines": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machines",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/state/machines/name": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "stateMachineName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/state/machines/name",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.stateMachineName": "method.request.querystring.stateMachineName"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/technical/types": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/technical/types",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/technical/types",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      },
+      "put": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "PUT",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/technical/types",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/configuration/technical/types/getalltechnicaltypesui": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "techNameFilter",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/configuration/technical/types/getAllTechnicalTypesUI",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/customers": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/customers",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/manage/info": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/manage/info",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/commercial/portfolioitem",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "402": {
+              "statusCode": "402"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.customerId": "method.request.querystring.customerId",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.pageNumber": "method.request.querystring.pageNumber",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "X-Correlation-Id",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "402": {
+            "description": "402 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/activation": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/activation",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/childPortfolioItems/{id}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/childPortfolioItems/{id}",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/expiry": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/expiry",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/order": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/order",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.querystring.date": "method.request.querystring.date",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/query": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/query",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/root": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "pageNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/root",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.pageNo": "method.request.querystring.pageNo",
+            "integration.request.querystring.customerId": "method.request.querystring.customerId",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.querystring.pageSize": "method.request.querystring.pageSize",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/subPortfolioItem": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "POST",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/subPortfolioItem",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/customerId": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/customerId",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/parent": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/parent",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/relatedPortfolioItems": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/relatedPortfolioItems",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/relatedPortfolioItems/{relationType}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "relationType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/relatedPortfolioItems/{relationType}",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.path.relationType": "method.request.path.relationType"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/root": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/root",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.querystring.customerId": "method.request.querystring.customerId",
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.fields": "method.request.querystring.fields",
+            "integration.request.querystring.allState": "method.request.querystring.allState",
+            "integration.request.querystring.depth": "method.request.querystring.depth"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/status": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allState",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/status",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.querystring.allState": "method.request.querystring.allState"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/inventory/api/portfolioitem/{id}/status/{status}": {
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "Hansen-PI-Authorizer": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "http",
+          "connectionId": "yhk4zv",
+          "httpMethod": "PATCH",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/inventory/api/portfolioitem/{id}/status/{status}",
+          "responses": {
+            "400": {
+              "statusCode": "400"
+            },
+            "401": {
+              "statusCode": "401"
+            },
+            "403": {
+              "statusCode": "403"
+            },
+            "404": {
+              "statusCode": "404"
+            },
+            "500": {
+              "statusCode": "500"
+            },
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestParameters": {
+            "integration.request.header.authorization": "method.request.header.authorization",
+            "integration.request.path.id": "method.request.path.id",
+            "integration.request.path.status": "method.request.path.status"
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/swagger-ui": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "yhk4zv",
+          "httpMethod": "GET",
+          "uri": "https://core-app.hansen-pi-int.aws.dishcloud.io/core/swagger-ui.html",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Hansen-PI-Authorizer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "x-amazon-apigateway-authtype": "custom",
+      "x-amazon-apigateway-authorizer": {
+        "type": "token",
+        "authorizerUri": "arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:227453601360:function:Hansen-PI-Authorizer/invocations",
+        "authorizerResultTtlInSeconds": 0
+      }
+    }
+  },
+  "definitions": {
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    }
+  },
+  "x-amazon-apigateway-endpoint-configuration": {
+    "vpcEndpointIds": [
+      "vpce-053f63e1d670d5229"
+    ]
+  }
+}
